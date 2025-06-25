@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newUsername = trim($_POST['username']);
     $newPassword = $_POST['password'];
 
-    // Check if username is already taken (by another user)
+    // if username is already exist
     $stmt = $db->prepare("SELECT COUNT(*) AS count FROM users WHERE username = ? AND id != ?");
     $stmt->bind_param("si", $newUsername, $userId);
     $stmt->execute();
@@ -22,12 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($row['count'] > 0) {
         $message = "<p class='error-message'>Username already in use.</p>";
     } else {
-        // Update name and username
+    
         $update = $db->prepare("UPDATE users SET name = ?, username = ? WHERE id = ?");
         $update->bind_param("ssi", $newName, $newUsername, $userId);
         $update->execute();
 
-        // Update password if provided
         if (!empty($newPassword)) {
             $hashed = password_hash($newPassword, PASSWORD_DEFAULT);
             $passUpdate = $db->prepare("UPDATE users SET password = ? WHERE id = ?");
@@ -75,6 +74,9 @@ $user = $result->fetch_assoc();
       <button type="submit" class="save-btn">Save Changes</button>
   </form>
 </main>
+ <footer class="site-footer">
+    &copy; <?= date('Y') ?> MyBlog. All rights reserved.
+</footer>
 
 <script>
     document.getElementById('profileForm').addEventListener('submit', function(e) {
@@ -87,6 +89,4 @@ $user = $result->fetch_assoc();
         }
     });
 </script>
- <footer class="site-footer">
-    &copy; <?= date('Y') ?> MyBlog. All rights reserved.
-</footer>
+

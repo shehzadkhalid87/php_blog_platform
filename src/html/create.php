@@ -1,7 +1,9 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
 include '../includes/auth.php';
 include '../includes/db.php';
 include '../includes/layouts/header.php';
@@ -13,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $imagePath = null;
 
     if (!empty($_FILES['image']['name'])) {
-        $uploadDir = '../uploads/';
+        $uploadDir = '../uploads/images/';
         $imageName = time() . '_' . basename($_FILES['image']['name']);
         $targetFile = $uploadDir . $imageName;
 
@@ -34,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  <link rel="stylesheet" href="../css/index.css">
 
 <main class="create-container">
-    <h1 class="create-title">✍️ Create New Post</h1>
+    <h1 class="create-title">Create New Post</h1>
 
     <form method="POST" enctype="multipart/form-data" class="create-form">
         <div class="form-group">

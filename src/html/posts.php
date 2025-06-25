@@ -19,7 +19,6 @@ $countResult = $count->get_result()->fetch_assoc();
 $totalPosts = $countResult ? $countResult['total'] : 0;
 $totalPages = $totalPosts > 0 ? ceil($totalPosts / $limit) : 1;
 
-// Fetch paginated, filtered posts
 $stmt = $db->prepare("
     SELECT * FROM posts 
     WHERE user_id = ? AND title LIKE ? 
@@ -37,7 +36,6 @@ $posts = $result->fetch_all(MYSQLI_ASSOC);
 <main class="container">
     <h1 class="title">Your Posts</h1>
 
-    <!-- Search Bar -->
     <form method="GET" class="search-form">
         <input type="text" name="search" value="<?= htmlspecialchars($search) ?>" placeholder="Search your posts..." class="search-input">
         <button type="submit" class="search-button">Search</button>
@@ -45,7 +43,7 @@ $posts = $result->fetch_all(MYSQLI_ASSOC);
 
     <a href="create.php" class="create-button">➕ New Post</a>
 
-    <!-- Posts List -->
+
     <div class="posts-list">
         <?php if (count($posts) > 0): ?>
             <?php foreach ($posts as $post): ?>

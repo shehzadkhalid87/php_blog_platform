@@ -1,4 +1,4 @@
-/* Page Base */
+
 body {
     background-color: #f0f2f5;
     font-family: Arial, sans-serif;
@@ -57,7 +57,6 @@ textarea {
     min-height: 150px;
 }
 
-/* Image Preview */
 .preview {
     width: 100%;
     max-width: 250px;
@@ -66,7 +65,7 @@ textarea {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Buttons */
+
 .submit-btn {
     width: 40%;
     background-color: #007bff;
@@ -86,7 +85,7 @@ textarea {
     background-color: #0056b3;
 }
 
-/* Back Link */
+
 .back-link {
     display: block;
     text-align: center;
@@ -97,4 +96,15 @@ textarea {
 
 .back-link:hover {
     text-decoration: underline;
+}
+.site-footer {
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    color: #777;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }

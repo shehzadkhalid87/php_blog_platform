@@ -27,12 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $imagePath = $post['image'];
 
     if (!empty($_FILES['image']['name'])) {
-        $uploadDir = '../uploads/';
+        $uploadDir = '../uploads/images';
         $imageName = time() . '_' . basename($_FILES['image']['name']);
         $targetFile = $uploadDir . $imageName;
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
-            $imagePath = 'uploads/' . $imageName;
+            $imagePath = 'uploads/image' . $imageName;
         }
     }
 
@@ -50,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Edit Post</title>
     <link rel="stylesheet" href="../css/edit.css">
-     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
 
@@ -84,7 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="submit-btn">Update Post</button>
     </form>
 </main>
-
+ <footer class="site-footer">
+    &copy; <?= date('Y') ?> MyBlog. All rights reserved.
+</footer>
 <script>
 function previewImage(event) {
     const preview = document.getElementById('preview');
@@ -101,8 +102,6 @@ function previewImage(event) {
 }
 </script>
 
- <footer class="site-footer">
-    &copy; <?= date('Y') ?> MyBlog. All rights reserved.
-</footer>
+
 </body>
 </html>

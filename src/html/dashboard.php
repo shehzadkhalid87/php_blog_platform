@@ -30,61 +30,73 @@ $recentStmt->execute();
 $result = $recentStmt->get_result();
 $recentPosts = $result->fetch_all(MYSQLI_ASSOC);
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../css/dashboard.css">
- <link rel="stylesheet" href="../css/index.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
 
-<main class="dashboard">
-  <h1 class="dashboard-title">Dashboard Overview</h1>
+</head>
 
-  <!-- Summary Cards -->
-  <div class="summary-cards">
-    <div class="summary-card">
-      <div class="summary-number"><?= $totalUsers ?></div>
-      <div class="summary-label">Total Users</div>
-    </div>
+<body>
+  <div class="page-wrapper">
+    <main class="dashboard">
+      <h1 class="dashboard-title">Dashboard Overview</h1>
 
-    <div class="summary-card">
-      <div class="summary-number"><?= $totalPosts ?></div>
-      <div class="summary-label">Total Posts</div>
-    </div>
-  </div>
-
-  <!-- Recent Posts -->
-  <div class="recent-posts">
-    <h2 class="recent-title">Recent Posts</h2>
-
-<ul class="post-list">
-  <?php foreach ($recentPosts as $post): ?>
-    <li class="post-item">
-      <div class="post-content">
-        <div>
-          <p class="post-title">
-            <a href="post.php?id=<?= $post['id'] ?>" class="read-more-link">
-              <?= htmlspecialchars($post['title']) ?>
-            </a>
-          </p>
-          <p class="post-meta">
-            By <?= htmlspecialchars($post['name']) ?> on <?= date('M d, Y', strtotime($post['created_at'])) ?>
-          </p>
-          <a href="post.php?id=<?= $post['id'] ?>" class="read-more-button">Read More →</a>
+     
+      <div class="summary-cards">
+        <div class="summary-card">
+          <div class="summary-number"><?= $totalUsers ?></div>
+          <div class="summary-label">Total Users</div>
         </div>
 
-        <?php if ($post['image']): ?>
-          <img src="../<?= $post['image'] ?>" class="post-thumbnail" alt="Thumbnail">
+        <div class="summary-card">
+          <div class="summary-number"><?= $totalPosts ?></div>
+          <div class="summary-label">Total Posts</div>
+        </div>
+      </div>
+
+      <!-- Recent Posts -->
+      <div class="recent-posts">
+        <h2 class="recent-title">Recent Posts</h2>
+
+        <ul class="post-list">
+          <?php foreach ($recentPosts as $post): ?>
+            <li class="post-item">
+              <div class="post-content">
+                <div>
+                  <p class="post-title">
+                    <a href="post.php?id=<?= $post['id'] ?>" class="read-more-link">
+                      <?= htmlspecialchars($post['title']) ?>
+                    </a>
+                  </p>
+                  <p class="post-meta">
+                    By <?= htmlspecialchars($post['name']) ?> on <?= date('M d, Y', strtotime($post['created_at'])) ?>
+                  </p>
+                  <a href="post.php?id=<?= $post['id'] ?>" class="read-more-button">Read More →</a>
+                </div>
+
+                <?php if ($post['image']): ?>
+                  <img src="../<?= $post['image'] ?>" class="post-thumbnail" alt="Thumbnail">
+                <?php endif; ?>
+              </div>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+
+
+        <?php if (empty($recentPosts)): ?>
+          <p class="no-posts">No recent posts found.</p>
         <?php endif; ?>
       </div>
-    </li>
-  <?php endforeach; ?>
-</ul>
 
-
-    <?php if (empty($recentPosts)): ?>
-      <p class="no-posts">No recent posts found.</p>
-    <?php endif; ?>
-  </div>
-</main>
-
- <footer class="site-footer">
+    </main>
+<footer class="site-footer">
     &copy; <?= date('Y') ?> MyBlog. All rights reserved.
 </footer>
+</body>
+
+</html>

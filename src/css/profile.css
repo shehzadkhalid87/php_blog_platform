@@ -4,9 +4,6 @@ body {
     margin: 0;
 
 }
-
-
-
 .profile-container {
     width: 100%;
     max-width: 800px;
@@ -92,4 +89,15 @@ body {
 .success-message {
     background-color: #d1fae5;
     color: #065f46;
+}
+.site-footer {
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    color: #777;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }

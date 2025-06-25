@@ -1,7 +1,9 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
 include '../includes/db.php';
 session_start();
 
@@ -30,15 +32,16 @@ if (!$post) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title><?= htmlspecialchars($post['title']) ?> - MyBlog</title>
   <link rel="stylesheet" href="../css/post.css">
-   <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/index.css">
 </head>
+
 <body>
 
-  <!-- Header -->
   <header class="header">
     <div class="logo">MyBlog</div>
     <nav class="menu">
@@ -53,7 +56,7 @@ if (!$post) {
     </nav>
   </header>
 
-  <!-- Post Content -->
+ 
   <main class="post-container">
     <h1 class="post-title"><?= htmlspecialchars($post['title']) ?></h1>
 
@@ -75,8 +78,10 @@ if (!$post) {
     </div>
   </main>
 
- <footer class="site-footer">
-    &copy; <?= date('Y') ?> MyBlog. All rights reserved.
-</footer>
+    <footer class="site-footer">
+      &copy; <?= date('Y') ?> MyBlog. All rights reserved.
+    </footer>
+
 </body>
+
 </html>

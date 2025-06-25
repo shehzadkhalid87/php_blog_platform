@@ -2,10 +2,10 @@
 require '../includes/db.php';
 session_start();
 
-// Search & fetch
+
 $search = $_GET['search'] ?? '';
 
-// Fetch posts
+
 $stmt = $db->prepare("
     SELECT posts.*, users.name 
     FROM posts 
@@ -33,7 +33,7 @@ if ($stmt->execute(["%$search%"])) {
 </head>
 <body>
 
-<!-- Header -->
+
 <header class="site-header">
     <div class="logo">MyBlog</div>
     <nav class="navbar">
@@ -48,16 +48,16 @@ if ($stmt->execute(["%$search%"])) {
     </nav>
 </header>
 
-<!-- Hero Section -->
+
 <section class="hero">
     <h1>Welcome to MyBlog</h1>
     <p>A clean, simple blogging platform where you can read and share ideas freely. Built with PHP & Pure CSS.</p>
     <a href="signup.php" class="btn">Get Started</a>
 </section>
 
-<!-- Features Section -->
+
 <section class="features">
-    <h2>💡 Why MyBlog?</h2>
+    <h2>Why MyBlog?</h2>
     <div class="feature-grid">
         <div class="feature-card">
             <h3>Write Freely</h3>
@@ -74,7 +74,6 @@ if ($stmt->execute(["%$search%"])) {
     </div>
 </section>
 
-<!-- Search Form -->
 <section class="search-section">
     <form method="GET" class="search-form">
         <input type="text" name="search" value="<?= htmlspecialchars($search) ?>" placeholder="Search blog posts..." autocomplete="off" id="searchInput">
@@ -82,7 +81,7 @@ if ($stmt->execute(["%$search%"])) {
     </form>
 </section>
 
-<!-- Posts Grid -->
+
 <main class="posts-section">
     <h2>📰 Latest Posts</h2>
 

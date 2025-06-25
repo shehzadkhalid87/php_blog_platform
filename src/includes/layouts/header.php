@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Simple Blog</title>
     <link rel="stylesheet" href="../css/header.css"> 
 </head>
-<body class="bg-gray-100">
+<body>
 
 <header class="site-header">
     <div class="logo">MyBlog</div>

@@ -87,3 +87,14 @@ body {
 .submit-btn:hover {
     background-color: #1e40af;
 }
+.site-footer {
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    color: #777;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
