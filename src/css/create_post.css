@@ -1,0 +1,89 @@
+body {
+    background-color: #f3f4f6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.create-container {
+    width: 100%;
+    max-width: 600px;
+    height: 70vh;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.create-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.create-form .form-group {
+    margin-bottom: 20px;
+}
+
+.create-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+
+.create-form input[name="title"] {
+    width: 95%;
+    font-size: 22px;
+    padding: 12px;
+    font-weight: bold;
+}
+
+
+.create-form input[type="text"],
+.create-form textarea,
+.create-form input[type="file"] {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    gap: 10px;
+}
+
+
+.create-form input:focus,
+.create-form textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px #2563eb33;
+}
+
+.image-preview {
+    margin-top: 15px;
+    max-width: 250px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.submit-btn {
+    padding: 12px 24px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+}
+
+.submit-btn:hover {
+    background-color: #1e40af;
+}

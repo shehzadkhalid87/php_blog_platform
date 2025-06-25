@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.search-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #1e40af;
+}
+
+.create-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.create-button:hover {
+    background-color: #1e40af;
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.post-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.post-content {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.post-actions {
+    margin-top: 10px;
+}
+
+.edit-link, .delete-link {
+    text-decoration: none;
+    color: #2563eb;
+    margin-right: 10px;
+}
+
+.delete-link {
+    color: #dc2626;
+}
+
+.pagination {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.page-link {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+}
+
+.page-link:hover {
+    background-color: #f0f0f0;
+}
+
+.page-link.active {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.no-posts {
+    text-align: center;
+    color: #777;
+}
+.hidden {
+    display: none;
+}
+
+.read-more-btn {
+    background-color: transparent;
+    border: none;
+    color: #2563eb;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}

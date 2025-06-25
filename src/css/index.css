@@ -1,0 +1,190 @@
+body {
+    background-color: #f9fafb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.site-header {
+    background-color: white;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.navbar a {
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #2563eb;
+}
+
+.hero {
+    background: linear-gradient(to right, #dbeafe, #ddd6fe);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #1e40af;
+}
+
+.features {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.search-form {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+}
+
+.search-form button {
+    padding: 12px 20px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #1e40af;
+}
+
+.posts-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.posts-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.post-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.post-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.post-card h3 a:hover {
+    text-decoration: underline;
+    color: #2563eb;
+}
+
+.post-card p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #777;
+}
+
+.no-posts {
+    grid-column: span 2;
+    text-align: center;
+    color: #777;
+    font-size: 18px;
+}
+
+.site-footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    color: #777;
+    margin-top: 40px;
+}
